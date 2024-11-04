@@ -39,8 +39,9 @@ public class BuildingAPI {
 	@Autowired // biến để khởi tạo interface , tìm các class
 	private BuildingService buildingService;
 	@GetMapping(value = "/api/building/")
-	public List<BuildingDTO> gettBuilding(@RequestParam Map<String, Object> params) {
-		List<BuildingDTO> result = buildingService.findAll(params);
+	public List<BuildingDTO> gettBuilding(@RequestParam Map<String, Object> params,
+										  @RequestParam(name = "typeCode", required = false) List<String> typeCode) {
+		List<BuildingDTO> result = buildingService.findAll(params, typeCode);
 		return result;
 	}
 	

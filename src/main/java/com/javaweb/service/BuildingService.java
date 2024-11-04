@@ -7,5 +7,5 @@ import com.javaweb.Model.BuildingDTO;
 
 public interface BuildingService {
 
-	List<BuildingDTO> findAll(Map<String, Object> params);
+	List<BuildingDTO> findAll(Map<String, Object> params, List<String> typeCode);
 }
