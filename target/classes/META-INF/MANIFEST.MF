@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: ADMIN
+Build-Jdk: 23.0.1
+Implementation-Title: spring-boot-non-jwt
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.javaweb
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-non-jwt
+Created-By: Maven Integration for Eclipse
+

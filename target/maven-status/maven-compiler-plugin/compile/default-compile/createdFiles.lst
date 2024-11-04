@@ -1,0 +1,12 @@
+com\javaweb\service\impl\BuildingServiceImpl.class
+com\javaweb\repository\entity\DistrictEntity.class
+com\javaweb\service\BuildingService.class
+com\javaweb\repository\impl\BuildingRepositoryImpl.class
+com\javaweb\Model\ErrorResponseDTO.class
+com\javaweb\controllerAdvice\ControllerAdvisor.class
+com\javaweb\repository\BuildingRepository.class
+com\javaweb\Model\BuildingDTO.class
+com\javaweb\repository\entity\BuildingEntity.class
+com\javaweb\Application.class
+com\javaweb\api\BuildingAPI.class
+customException\FieldRequiredException.class
