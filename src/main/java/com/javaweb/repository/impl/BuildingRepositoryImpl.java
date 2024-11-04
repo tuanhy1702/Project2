@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 import com.javaweb.repository.BuildingRepository;
@@ -17,14 +18,8 @@ public class BuildingRepositoryImpl implements BuildingRepository{
     private static String username = "root";
     private static String password = "123456789";
 	@Override
-	public List<BuildingEntity> findAll(String name, Long districtId) {
+	public List<BuildingEntity> findAll(Map<String, Object> params) {
 		StringBuilder sql = new StringBuilder("SELECT * FROM building WHERE 1 = 1 ");
-		if(name != null && !name.equals("")) {
-			sql.append("AND name LIKE '%"+name+"%' ");
-		}
-		if(districtId != null) {
-			sql.append("AND districtid LIKE "+districtId+" ");
-		}
 		List<BuildingEntity> result = new ArrayList<>();
 		try(Connection con = DriverManager.getConnection(url,username, password);
 				Statement stm = con.createStatement();
