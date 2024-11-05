@@ -38,8 +38,7 @@ public class BuildingRepositoryImpl implements BuildingRepository{
     
     public static void queryNomal(Map<String, Object> params, StringBuilder where) {
     	for(Map.Entry<String, Object> it : params.entrySet()) {
-    		if(!it.getKey().equals("staffId") && !it.getKey().equals("typeCode")&&
-    				!it.getKey().startsWith("area") && !it.getKey().startsWith("rentPrice")) {
+    		if(!it.getKey().equals("staffId") && !it.getKey().equals("typeCode")&&!it.getKey().startsWith("area") && !it.getKey().startsWith("rentPrice")) {
     			String value = it.getValue().toString();
     			if(StringUtil.checkString(value)) {
     				if(NumberUtil.isNumber(value) == true) {
@@ -112,6 +111,7 @@ public class BuildingRepositoryImpl implements BuildingRepository{
 				buildingEntity.setWard(rs.getString("b.ward"));
 				buildingEntity.setDistrictid(rs.getLong("b.districtid"));
 				buildingEntity.setStreet(rs.getString("b.street"));
+				buildingEntity.setNumberOfBasement(rs.getLong("b.numberofbasement"));
 				buildingEntity.setFloorArea(rs.getLong("b.floorarea"));
 				buildingEntity.setRentPrice(rs.getLong("b.rentprice"));
 				buildingEntity.setServiceFee(rs.getString("b.servicefee"));

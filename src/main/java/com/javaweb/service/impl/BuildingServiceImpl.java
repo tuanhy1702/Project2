@@ -16,11 +16,12 @@ import com.javaweb.service.BuildingService;
 
 @Service
 public class BuildingServiceImpl implements  BuildingService{
-	@Autowired
-	private BuildingRepository buildingRepository;
 	
 	@Autowired
+	private BuildingRepository buildingRepository;
+	@Autowired
 	private DistrictRepository districtRepository;
+	
 	@Override
 	public List<BuildingDTO> findAll(Map<String, Object> params, List<String> typeCode) {
 		// TODO Auto-generated method stub
@@ -31,6 +32,12 @@ public class BuildingServiceImpl implements  BuildingService{
 			building.setName(item.getName());
 			DistrictEntity districtEntity = districtRepository.findNameById(item.getDistrictid()) ;
 			building.setAddress(item.getStreet() + "," + item.getWard()+","+districtEntity.getName());	
+			building.setNumberOfBasement(item.getNumberOfBasement());
+			building.setManagerName(item.getManagerName());
+			building.setManagerPhoneNumber(item.getManagerPhoneNumber());
+			building.setRentPrice(item.getRentPrice());
+			building.setBrokerageFee(item.getBrokerageFee());
+			building.setFloorArea(item.getFloorArea());
 			result.add(building);
 		}
 		return result;

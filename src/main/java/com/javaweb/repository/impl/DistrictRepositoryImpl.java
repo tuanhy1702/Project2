@@ -21,6 +21,7 @@ public class DistrictRepositoryImpl implements DistrictRepository {
 	public DistrictEntity findNameById(Long id) {
 		String sql = "SELECT d.name FROM district d WHERE d.id = " + id + ";";
 		DistrictEntity districtEntity = new DistrictEntity();
+		
 		try(Connection con = DriverManager.getConnection(url,username, password);
 				Statement stm = con.createStatement();
 				ResultSet rs = stm.executeQuery(sql);){

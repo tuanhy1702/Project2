@@ -13,6 +13,13 @@ public class BuildingEntity {
 	private Long rentPrice;
 	private String serviceFee;
 	private Long brokerageFee;
+	private Long numberOfBasement;
+	public Long getNumberOfBasement() {
+		return numberOfBasement;
+	}
+	public void setNumberOfBasement(Long numberOfBasement) {
+		this.numberOfBasement = numberOfBasement;
+	}
 	public Long getId() {
 		return id;
 	}
