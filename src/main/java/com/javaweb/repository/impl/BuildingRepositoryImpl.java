@@ -35,6 +35,7 @@ public class BuildingRepositoryImpl implements BuildingRepository{
 //    	}
     }
     
+    
     public static void queryNomal(Map<String, Object> params, StringBuilder where) {
     	for(Map.Entry<String, Object> it : params.entrySet()) {
     		if(!it.getKey().equals("staffId") && !it.getKey().equals("typeCode")&&!it.getKey().startsWith("area") && !it.getKey().startsWith("rentPrice")) {
