@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,16 +30,14 @@ import com.javaweb.service.BuildingService;
 import customException.FieldRequiredException;
 
 @RestController
+@PropertySource("classpath:application.properties")
 public class BuildingAPI {
 	
-	@DeleteMapping(value = "/api/building/{id}/{name}")
-	public void deleteBuilding(@PathVariable Integer id, @PathVariable String name) {
-		System.out.print("da xoa toa nha co id la " + id + " ten la " + name);
-	}
-	
-	 //tìm kiếm toà nhà nào có chữ name trong tên
 	@Autowired // biến để khởi tạo interface , tìm các class
 	private BuildingService buildingService;
+	
+	@Value("${dev.khuc}")
+	private String data;
 	
 	@GetMapping(value = "/api/building/")
 	public List<BuildingDTO> gettBuilding(@RequestParam Map<String, Object> params,
@@ -45,6 +45,18 @@ public class BuildingAPI {
 		List<BuildingDTO> result = buildingService.findAll(params, typeCode);
 		return result;
 	}
+		
+//	@DeleteMapping(value = "/api/building/{id}/{name}")
+//	public void deleteBuilding(@PathVariable Integer id, @PathVariable String name) {
+//		System.out.print("da xoa toa nha co id la " + id + " ten la " + name);
+//	}
+	
+	@DeleteMapping(value = "/api/building/{id}")
+	public void deleteBuilding(@PathVariable Integer id) {
+		System.out.print(data);
+	}
+	
+	 
 	
 }
 

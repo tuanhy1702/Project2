@@ -12,6 +12,8 @@ public class BuildingDTO {
 	private String serviceFee;
 	private Long brokerageFee;
 	private Long NumberOfBasement;
+	private String direction;
+	private String level;
 	
 	
 	public Long getNumberOfBasement() {
@@ -79,6 +81,18 @@ public class BuildingDTO {
 	}
 	public void setBrokerageFee(Long brokerageFee) {
 		this.brokerageFee = brokerageFee;
+	}
+	public String getDirection() {
+		return direction;
+	}
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
 	}
 
 	
